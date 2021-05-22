@@ -1,17 +1,24 @@
 <main class="main-page">
+
   <h1>Buscador de series</h1>
+
   <form action="#" class="js-form">
-    <input type="text" class="js-input" placeholder="Escribe nombre de la serie" value="">
-    <input type="button" class="js-button" value="Search">
+    <input type="text" class="js-input" placeholder="Nombre de la serie" value="">
+    <input type="button" class="js-button" value="Buscar">
   </form>
 
-  <div class="container">
-    <div class="item-favourite">
-        <h2>Mis series favoritas</h2>
-        <ul class="js-favorites"></ul>
-        <button class="js-reset">Reset</button>
-    </div>
-    
-    <div class="item-favourite js-results"></div>
-</div>
+  <div class="containerAll">
+
+    <section class="resultContainer">
+      <ul class="js-resultList"></ul>
+    </section>
+
+    <section class="favouriteContainer">
+      <h2>Mis series favoritas</h2>
+      <ul class="js-favorites"></ul>
+      <button class="js-reset">Reset</button>
+    </section>
+
+  </div>
+
 </main>
