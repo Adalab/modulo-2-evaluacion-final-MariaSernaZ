@@ -11,4 +11,3 @@ const imgDefault = 'https://via.placeholder.com/210x295/ffffff/666666/?text=TV';
 
 let globalShows = [];
 
-let favoriteShows = [];

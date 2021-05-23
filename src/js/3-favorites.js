@@ -4,6 +4,8 @@
 3- Series favoritas siguen apareciendo aunque usuaria realice otra búsqueda
 */
 
+let favoriteShows = [];
+
 function addListenerLi(){
     //Le añadimos un listener a todos los <li> 
     const allShows = document.querySelectorAll('.js-resultList-item'); //Nos devolverá un array
