@@ -1,6 +1,6 @@
 //Almacenar el listado de favoritos en el localStorage --> al recargar la página el listado de favoritos debe mostrarse
 
-//Set in local storage
+//Guardamos en localStorage y llamamos a la función en el momento en que cambia nuestro array de favoritos
 const setInLocalStorage = () => {
     const stringFav = JSON.stringify(favoriteShows);
     localStorage.setItem('favShows', stringFav); 

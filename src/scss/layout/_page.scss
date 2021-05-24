@@ -1,19 +1,40 @@
 body {
   padding: 2rem;
   height: 100vh;
-  //background-image: url('../images/.png');
   background-color: $color-bg;
   font-family: $font-main;
 }
 
-.title{
+.title-text{
   text-align: center;
+  color:$color-secondary;
+  padding-bottom: 15px;
+}
+
+.title-text2{
+  text-align: left;
 }
 
 .search-form{
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+.input{
+  width: 500px;
+  height: 30px;
+  border-radius: 10px;
+}
+
+.button{
+  width: 100px;
+  height: 30px;
+  border-radius: 20px;
+  border-style: none;
+  margin: 0 20px 0 20px;
+  background-color:$color-secondary;
+  color: aliceblue;
 }
 
 .list-item{
@@ -28,12 +49,14 @@ body {
 
 .resultContainer{
   width: 70%;
+  margin-top: 30px;
 }
 
 .listResult{
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -44,11 +67,16 @@ body {
 .listFav{
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .favorite{
  border: 3px solid blue;
  background-color: rgb(104, 134, 230);
 }
+
+.js-reset{
+  margin: 20px 0 20px 0;
+}
+

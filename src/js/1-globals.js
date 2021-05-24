@@ -7,6 +7,8 @@ const ulElement = document.querySelector('.js-resultList');
 
 const ulElementFav = document.querySelector('.js-favoriteList');
 
+const resetElement = document.querySelector('.js-reset');
+
 
 const imgDefault = 'https://via.placeholder.com/210x295/ffffff/666666/?text=TV';
 
