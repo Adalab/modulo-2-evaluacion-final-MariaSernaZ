@@ -8,19 +8,18 @@
 function getDataShows(){
     let inputValue = inputElement.value; //Necesitamos el valor del input para incluirlo en la url del fetch
 
-    fetch(`https://api.tvmaze.com/search/shows?q=${inputValue}`)
+    fetch(`//api.tvmaze.com/search/shows?q=${inputValue}`)
         .then(response => response.json())
         .then((data) => {
             console.log(data); //Nos devuelve un array de objetos con series
             globalShows = data; //Asignamos el array de objetos a una variable para poder pasar los datos a otra función y poder usarlos en más ocasiones
             //console.log(globalShows);
+
             renderList(globalShows);
-        });
+    });
 }
 
-
 function renderList(data){
-    //ulElement.innerHTML = ""; --> Nos borraría lo que hubiese en la lista HTML antes de pintar las paletas
     //const show = data[0].show;
     //console.log(show);
 
@@ -28,22 +27,19 @@ function renderList(data){
         let show = data[i].show;
         let titleShow = data[i].show.name;
 
+        let imgShow = "";
 
         if(data[i].show.image != null){
-            let imgShow = data[i].show.image.medium;
+            imgShow = data[i].show.image.medium;
+        } else {
+            imgShow = imgDefault;
+        }
 
-            ulElement.innerHTML += 
+        ulElement.innerHTML += 
             `<li id="${show.id}" class="js-resultList-item list-item favorite">
                 <img src="${imgShow}" alt="Imagen ${titleShow} class="js-img"> 
                 <p>${titleShow}</p>
             </li>`;
-        } else {
-            ulElement.innerHTML += 
-            `<li id="${show.id}" class="js-resultList-item list-item favorite">
-                <img src="${imgDefault}" alt="Imagen ${titleShow} class="js-img">
-                <p>${titleShow}</p>
-            </li>`;
-        }
     }
 
     addListenerLi(); //Cuando terminemos de pintar el resultado con la lista de series, se añaden los listener a cada li

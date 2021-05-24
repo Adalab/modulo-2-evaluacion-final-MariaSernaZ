@@ -6,8 +6,46 @@ body {
   font-family: $font-main;
 }
 
+.title{
+  text-align: center;
+}
+
+.search-form{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .list-item{
   list-style: none;
+}
+
+.containerAll{
+  display: flex;
+  flex-direction: row-reverse;
+
+}
+
+.resultContainer{
+  width: 70%;
+}
+
+.listResult{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.favContainer{
+  width: 30%;
+}
+
+.listFav{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .favorite{
