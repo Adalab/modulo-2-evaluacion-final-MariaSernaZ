@@ -36,7 +36,7 @@ function renderList(data){
         }
 
         ulElement.innerHTML += 
-            `<li id="${show.id}" class="js-resultList-item list-item favorite">
+            `<li id="${show.id}" class="js-resultList-item list-item">
                 <img src="${imgShow}" alt="Imagen ${titleShow} class="js-img"> 
                 <p>${titleShow}</p>
             </li>`;
