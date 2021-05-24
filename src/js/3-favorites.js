@@ -34,6 +34,7 @@ function handleClickFav(event){
     //Buscamos el identificador de la serie seleccionada en el array de favoritos (favoriteShows) para comprobar si ya está en favoritos. Find nos devolverá el primer elemento o undefined
     const showIdInfo = favoriteShows.find((fav) => fav.show.id === selectedId);
     console.log("Id",showIdInfo); //Devuelve undefined
+    console.log("qué es",favoriteShows); //Nos devuelve un array de objetos seleccionados como favoritos
 
     if(showIdInfo === undefined){
         //id clickado no está en array de favoritos --> lo añadimos
@@ -45,31 +46,37 @@ function handleClickFav(event){
         //id clickado está en array de favoritos --> lo quitamos
         const indexIdFav = favoriteShows.findIndex(fav => fav.show.id === selectedId);
         favoriteShows.splice(indexIdFav, 1);
-        //favoriteShows = favoriteShows.filter((fav) => fav.show.id !== selectedId); //Nos genera un nuevo array actualizado que asignamos a al array inicial favoriteShows
+
+        /*Otra opción:
+        favoriteShows = favoriteShows.filter((fav) => fav.show.id !== selectedId); //Nos genera un nuevo array actualizado que asignamos a al array inicial favoriteShows*/
     }
     
+    setInLocalStorage (); //Con la condición anterior modificamos nuestro array de favoritos, por tanto, guardaremos en localStorage
+
     console.log('tipoInfo', favoriteShows);//Nos devuelve un array de objetos de fav
-
-
-    function renderListFav(){
-
-        for (let favShow of favoriteShows){
-            console.log('favorita:',favShow);
-                     
-            let imgShow = "";
-
-            if(favShow.show.image != null){
-                imgShow = favShow.show.image.medium;
-            } else {
-                imgShow = imgDefault;
-            }
-
-            ulElementFav.innerHTML += 
-                `<li id="${favShow.id}" class="js-resultList-item list-item favorite">
-                    <img src="${imgShow}" alt="Imagen ${favShow.show.name} class="js-img"> 
-                    <p>${favShow.show.name}</p>
-                </li>`;
-        }
-    }
+    
     renderListFav();
+}
+
+
+function renderListFav(){
+    ulElementFav.innerHTML= "";//tenemos que vaciar ul para que no nos vaya repitiendo los favoritos ya elegidos  
+
+    for (let favShow of favoriteShows){
+        console.log('favorita:',favShow);
+                 
+        let imgShow = "";
+
+        if(favShow.show.image != null){
+            imgShow = favShow.show.image.medium;
+        } else {
+            imgShow = imgDefault;
+        }
+
+        ulElementFav.innerHTML += 
+            `<li id="${favShow.id}" class="js-resultList-item list-item favorite">
+                <img src="${imgShow}" alt="Imagen ${favShow.show.name} class="js-img"> 
+                <p>${favShow.show.name}</p>
+            </li>`;
+    }
 }

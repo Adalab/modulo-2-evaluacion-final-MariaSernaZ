@@ -1,26 +1,26 @@
 //Almacenar el listado de favoritos en el localStorage --> al recargar la página el listado de favoritos debe mostrarse
 
-    
-    /*if (favLocalStorage === null){
-        No tiene los datos guardados --> tenemos que hacer el fetch
-
-    }else{
-        //Tiene los datos guardados en localStorage
-        favoriteShows = JSON.parse(localStorage.getItem('favoriteShows'));
-
-    }*/
-
-
-/*  const getDataFromLocalStorage = () => {
-    const localStorageFav = localStorage.getItem('favoriteShows');
-    if (localStorageFav !== null) {
-        favoriteShows = JSON.parse(localStorageFav);
-    }
-    renderFav();
+//Set in local storage
+const setInLocalStorage = () => {
+    const stringFav = JSON.stringify(favoriteShows);
+    localStorage.setItem('favShows', stringFav); 
 };
 
-    //Set in local storage
-    const setInLocalStorage = () => {
-    stringFav = JSON.stringify(favoriteShows);
-    localStorage.setItem('favoriteShows', stringFav);   
-};*/
+
+function renderFavLocalStorage(){
+const localStorageFav = localStorage.getItem('favShows');
+console.log('localStorage-Info', localStorageFav);// nos devuelve null cuando está vacío o array si contiene favoritos
+
+if (localStorageFav === null){
+    //No tiene los datos guardados, array favoritos vacío 
+    favoriteShows = [];
+
+}else{
+    //Tiene los datos guardados en localStorage. Pasamos datos guardados a nuestro array de favoritos, transformamos de cadena a objeto y pintamos
+    favoriteShows = JSON.parse(localStorageFav);
+
+    renderListFav();
+}
+}
+
+renderFavLocalStorage();
