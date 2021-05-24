@@ -9,7 +9,7 @@ const setInLocalStorage = () => {
 
 function renderFavLocalStorage(){
 const localStorageFav = localStorage.getItem('favShows');
-console.log('localStorage-Info', localStorageFav);// nos devuelve null cuando está vacío o array si contiene favoritos
+console.log('localStorage-Info:', localStorageFav);// nos devuelve null cuando está vacío o array si contiene favoritos
 
 if (localStorageFav === null){
     //No tiene los datos guardados, array favoritos vacío 
