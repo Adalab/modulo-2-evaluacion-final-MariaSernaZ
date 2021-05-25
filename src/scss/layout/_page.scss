@@ -7,7 +7,7 @@ body {
 
 .title-text{
   text-align: center;
-  color:$color-secondary;
+  color:white;
   padding-bottom: 15px;
 }
 
@@ -35,11 +35,12 @@ body {
   border-style: none;
   margin: 0 20px 0 20px;
   background-color:$color-secondary;
-  color: aliceblue;
+  color: rgb(2, 5, 58);
 }
 
 .list-item{
   list-style: none;
+  color: white;
 }
 
 .containerAll{
@@ -59,6 +60,10 @@ body {
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
+}
+
+.titleShow{
+  color:white;
 }
 
 .favContainer{
