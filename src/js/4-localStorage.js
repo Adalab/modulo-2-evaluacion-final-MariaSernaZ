@@ -13,13 +13,13 @@ function renderFavLocalStorage(){
 
     if (localStorageFav === null){
     //No tiene los datos guardados, array favoritos vacío 
-    favoriteShows = [];
+        favoriteShows = [];
 
     }else{
     //Tiene los datos guardados en localStorage. Pasamos datos guardados a nuestro array de favoritos, transformamos de cadena a objeto y pintamos
-    favoriteShows = JSON.parse(localStorageFav);
+        favoriteShows = JSON.parse(localStorageFav);
 
-    renderListFav();
+        renderListFav();
     }
 }
 
